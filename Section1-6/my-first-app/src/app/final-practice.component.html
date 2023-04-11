@@ -1,0 +1,11 @@
+<div class="div mt-5">
+  <button class="btn btn-primary" (click)="isPressed === true ? isPressed = false : isPressed = true">Show secret</button>
+  <p class="mt-2">Secret Password = tuna</p>
+  <div *ngIf="isPressed" >
+    <input type="text"  class="form-control mt-3" [(ngModel)]="logMessage">
+  </div>
+  <button class="btn btn-primary mt-3" (click)="logText(logMessage)" >Log</button>
+  <div *ngFor="let log of loggedText ; let i = index" [ngStyle]="{backgroundColor: i >= 5? 'blue'  : 'transparent'}">
+    {{log}}
+  </div>
+</div>
