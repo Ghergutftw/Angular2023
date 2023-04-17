@@ -58,7 +58,16 @@
           <p>{{post.content}}</p>
         </li>
       </ul>
-      <p *ngIf="isFetching">Loading...</p>
+      <p *ngIf="isFetching && !error">Loading...</p>
+      <div class="alert alert-danger" *ngIf="error">
+        <h1>An Error Occurred!</h1>
+        <p>{{error}}</p>
+      </div>
+<!--      <div class="alert alert-danger" *ngIf="errorCode === 401">-->
+<!--        <h1>An Error Occurred! Please contact the administrator at @</h1>-->
+<!--        <p>Error code : {{errorCode}}</p>-->
+<!--        <button class="btn btn-danger" (click)="onHandleError()">Okay</button>-->
+<!--      </div>-->
     </div>
   </div>
 </div>
