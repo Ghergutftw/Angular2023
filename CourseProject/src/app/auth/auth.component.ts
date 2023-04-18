@@ -61,4 +61,7 @@ export class AuthComponent implements OnInit {
   }
 
 
+  onHandleClose() {
+    this.errorMessage = null
+  }
 }
