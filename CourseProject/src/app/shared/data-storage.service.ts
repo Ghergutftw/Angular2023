@@ -23,7 +23,8 @@ export class DataStorageService {
 
   onFetchData() {
     return this.http.get<Recipe[]>(this.baseUrl)
-      .pipe(map((recipes: Recipe[]) => {
+      .pipe(
+        map((recipes: Recipe[]) => {
           return recipes.map((recipe: Recipe) => {
             return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []}
           })
@@ -31,5 +32,6 @@ export class DataStorageService {
         tap(recipes => {
           this.recipeService.setRecipes(recipes)
         }))
+
   }
 }
