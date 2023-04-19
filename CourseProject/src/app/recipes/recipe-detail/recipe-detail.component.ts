@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+import {trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-recipe-detail',
